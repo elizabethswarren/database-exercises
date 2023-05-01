@@ -1,0 +1,1 @@
+This repository is for practicing SQL queries on Codeup databases.
