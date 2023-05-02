@@ -71,19 +71,24 @@ SHOW CREATE TABLE employees;
   PRIMARY KEY (`emp_no`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1
 
+-- Instructor Answer: DESCRIBE employees; 
+
 string, int, and date
 
    11. Which tables do you think contain a numeric type column?
 		salaries
+        Instructor Answer: All of them because of the primary key.
         
    12. Which tables do you think contain a string type columm?
 		departments, dept_emp, dept_manager, employees, titles
         
    13. Which tables do you think contain a date type column?
 		dept_emp, dept_manager, employees
+        Instructor Answer: dept_emp, dept_manager, employees, salaries, titles
         
    14. What is the relationship between the employees and the department tables?
-		the table dept_emp */
+		the table dept_emp
+        Instructor Answer: There is no direct relationship, but we can use another table. */
  
 -- 15.  Show the SQL that created the dept_manager table. Write the SQL it takes to show this as your exercise solution.
 SHOW CREATE TABLE dept_manager;
