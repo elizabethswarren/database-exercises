@@ -6,6 +6,7 @@ USE albums_db;
 -- 2.
 SHOW CREATE table albums;
 -- PRIMARY KEY (`id`)
+-- Instructor Answer : DESCRIBE albums
 
 -- 3.
 SELECT *
@@ -14,6 +15,9 @@ FROM albums;
 
 -- 4. 
 	-- album sales
+    /* Instructor answer : 
+    SELECT*
+    FROM albums; */
     
 -- 5.
 SELECT *
@@ -27,6 +31,10 @@ SELECT *
 FROM albums
 WHERE artist = 'The Beatles';
 -- 1967
+/* Instructor answer:
+SELECT release_date
+FROM albums
+WHERE name = "Sgt. Pepper's Lonely Hearts Club Band" */
 
 -- 7.
 SELECT *
@@ -39,6 +47,10 @@ SELECT *
 FROM albums
 WHERE release_date BETWEEN 1989 and 1999;
 -- 11
+/* Instructor answer: Integers are inclusive.
+SELECT *
+FROM albums
+WHERE release_date BETWEEN 1990 and 1999; */
 
 -- 9. 
 SELECT name, sales AS low_selling_albums
@@ -56,4 +68,9 @@ WHERE sales < 20;
 'Sgt. Pepper\'s Lonely Hearts Club Band','13.1'
 'The Immaculate Collection','19.4'
 'The Wall','17.6'
-'Titanic: Music from the Motion Picture','18.1'*/
+'Titanic: Music from the Motion Picture','18.1'
+
+Instructor answer:
+SELECT name, sales AS low_selling_albums
+FROM albums
+WHERE sales < =20; */
