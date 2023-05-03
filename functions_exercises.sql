@@ -20,6 +20,11 @@ SELECT COUNT(*),
 	UPPER(CONCAT(first_name, ' ', last_name)) AS full_name
 FROM employees
 WHERE last_name LIKE 'e%e';
+/* Instructor Answer:
+SELECT COUNT(
+	UPPER(CONCAT(first_name, ' ', last_name))) AS full_name
+FROM employees
+WHERE last_name LIKE 'e%e' */
 
 -- 5.
 SELECT *,
@@ -32,6 +37,10 @@ WHERE hire_date LIKE '199%'
 SELECT MIN(salary), MAX(salary)
 FROM salaries
 WHERE to_date LIKE '9999-01-01';
+/* Alternate Answer:
+SELECT MIN(salary), MAX(salary)
+FROM salaries
+WHERE to_date > from_date; */
 
 -- 7.
 SELECT first_name, last_name, birth_date,
@@ -41,6 +50,39 @@ SELECT first_name, last_name, birth_date,
         SUBSTR(birth_date, 6, 2),
         SUBSTR(birth_date, 3, 2))) AS username
 FROM employees;
+/* Instructor Answer:
+SELECT 
+	LOWER(
+		CONCAT(
+			SUBSTR(first_name, 1, 1), 
+			SUBSTR(last_name, 1, 4),
+			'_',
+			SUBSTR(birth_date, 6, 2),
+			SUBSTR(birth_date, 3, 2)
+			)
+		) AS username,
+        first_name,
+        last_name,
+        birth_date
+FROM employees;
+
+OR
+
+SELECT 
+	LOWER(
+		CONCAT(
+			LEFT(first_name, 1), 
+			LEFT(last_name, 4),
+			'_',
+			SUBSTR(birth_date, 6, 2),
+			SUBSTR(birth_date, 3, 2)
+			)
+		) AS username,
+        first_name,
+        last_name,
+        birth_date
+FROM employees;
+
     
 
 
