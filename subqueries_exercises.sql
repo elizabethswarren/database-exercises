@@ -64,3 +64,26 @@ WHERE salary > 1 + (
     ORDER BY salary DESC
     LIMIT 1
 );
+
+
+USE employees;
+
+/* SELECT MAX(salary)
+FROM salaries
+WHERE to_date > NOW();
+-- 158220 Max Salary
+SELECT STD(salary)
+FROM salaries
+WHERE to_date > NOW();
+-- 17309.96 STD
+SELECT COUNT(salary)
+FROM salaries
+WHERE salary > 
+	(SELECT MAX(salary)
+	FROM salaries
+	WHERE to_date > NOW()) -
+    (SELECT STD(salary)
+	FROM salaries
+	WHERE to_date > NOW())
+AND to_date > NOW();*/
+    
