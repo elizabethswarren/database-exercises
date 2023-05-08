@@ -75,4 +75,45 @@ SELECT staff_id, first_name, last_name,
 FROM staff
 WHERE password IS NULL;
 
+-- 4.a.
+SELECT phone, district
+FROM address
+WHERE district IN ('California', 'England',
+	'Taipei', 'West Java');
+    
+-- 4.b.
+SELECT payment_id, amount, payment_date
+FROM payment
+WHERE DATE(payment_date)
+	IN ('2005-05-25', '2005-05-27', '2005-05-29');
+
+-- 4.c.
+SELECT *
+FROM film
+WHERE rating IN ('G', 'PG-13', 'NC-17');
+
+-- 5.a.
+SELECT *
+FROM payment
+WHERE payment_date BETWEEN '2005-05-25 00:00:00' 
+	AND '2005-05-25 23:59:59';
+    
+-- 5.b.
+SELECT film_id, title, description
+FROM film
+WHERE length BETWEEN 100 AND 120;
+
+-- 6.a.
+SELECT *
+FROM film
+WHERE description LIKE 'A Thoughtful%';
+
+-- 6.b.
+SELECT *
+FROM film
+WHERE description LIKE '%Boat';
+
+
+
+
 
